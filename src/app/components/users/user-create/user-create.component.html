@@ -3,23 +3,23 @@
     <form>
         <mat-form-field>
             <input matInput placeholder="Nome" 
-            [(ngModel)]="user.name" name="name">
+            [(ngModel)]="user.name" name="name" required>
         </mat-form-field>
         <mat-form-field>
             <input matInput placeholder="Sobrenome"
-            [(ngModel)]="user.lastName" name="lastName">
+            [(ngModel)]="user.lastName" name="lastName" required>
         </mat-form-field>
         <mat-form-field>
             <input matInput placeholder="E-mail"
-            [(ngModel)]="user.email" name="email">
+            [(ngModel)]="user.email" name="email" required>
         </mat-form-field>
         <mat-form-field>
             <input matInput placeholder="Senha"
-            [(ngModel)]="user.password" name="password" type="password">
+            [(ngModel)]="user.password" name="password" type="password" required>
         </mat-form-field>
         <mat-form-field>
             <input matInput placeholder="Data de Aniversário"
-            [(ngModel)]="user.birthday" type="date" name="birthday">
+            [(ngModel)]="user.birthday" type="date" name="birthday" required>
         </mat-form-field>
     </form>
 
