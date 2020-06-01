@@ -1,0 +1,11 @@
+table {
+    width: 100%;
+}
+
+button {
+    margin-top: 10px;
+}
+
+.button-delete {
+    margin-bottom: 10px;
+}
