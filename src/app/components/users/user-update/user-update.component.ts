@@ -1,7 +1,7 @@
 import { User } from './../user.model';
 import { UserService } from './../user.service';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -11,28 +11,29 @@ import { HttpClient } from '@angular/common/http';
 })
 export class UserUpdateComponent implements OnInit {
 
-  user: User = {
-    name: '', 
-    lastName: '', 
-    email: '', 
-    password: '',
-  }
+  user: User;
 
-  constructor(private userService: UserService,
-    private router: Router) {}
+  constructor(
+    private userService: UserService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) { }
 
   ngOnInit(): void {
+    const _id = this.route.snapshot.paramMap.get('_id')
+    this.userService.readById(_id).subscribe(user => {
+      this.user = user;
+    });
   }
 
   updateUser(): void {
     this.userService.update(this.user).subscribe(() => {
-      this.userService.showMessage('Usuário atualizado')
-      this.router.navigate(['/users'])
-    })
+      this.userService.showMessage('Usuário Atualizado')
+      this.router.navigate(['/users/read']);
+    });
   }
 
   cancel(): void {
     this.router.navigate(['/users'])
   }
-
 }

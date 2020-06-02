@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { UserService } from './../user.service';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Pipe, PipeTransform } from '@angular/core';
 import { DatePipe } from '@angular/common';
 
@@ -29,24 +29,26 @@ export class UserReadComponent implements OnInit {
   baseUrl = "http://localhost:3000/users/"
 
   users: any
-  displayedColumns = ['buttons', '_id', 'name', 'email', 'createdAt']
+  displayedColumns = ['_id', 'name', 'email', 'createdAt', 'buttons']
 
   constructor(private userService: UserService, private http: HttpClient,
-  private router: Router) {}
+  private router: Router,
+  private route: ActivatedRoute) {}
 
   async ngOnInit() {
-      this.users = await this.userService.read()
-      console.log(this.users)
+      this.users = await this.userService.read();
   }
  
   deleteUser(_id) {
-    this.userService.delete(_id).subscribe();
+    this.userService.delete(_id).subscribe(() => {
     this.userService.showMessage('Usuário deletado');
-    this.router.navigate(['/users']);
-  }
+    this.router.navigate(['/users/read']);
+  })
+
+}
 
   cancel(): void {
-    this.router.navigate([self])
+    this.router.navigate(['/users'])
   }
 
 }

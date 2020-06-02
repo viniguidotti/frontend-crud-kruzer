@@ -6,6 +6,20 @@ button {
     margin-top: 10px;
 }
 
-.button-delete {
-    margin-bottom: 10px;
+th {
+    font-size: 1rem;
+    font-style: initial;
+    font-weight: bold;
+}
+
+.edit > i {
+    color: #d9cd26;
+}
+
+.delete > i {
+    color: #e35e6b;
+}
+
+.edit { 
+    margin-right: 10px;
 }

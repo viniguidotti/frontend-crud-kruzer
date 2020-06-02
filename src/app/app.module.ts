@@ -25,7 +25,6 @@ import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { UserReadComponent } from './components/users/user-read/user-read.component';
-import { UserRead2Component } from './components/users/user-read2/user-read2.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
@@ -42,7 +41,6 @@ import { UserUpdateComponent } from './components/users/user-update/user-update.
     RedDirective,
     UserCreateComponent,
     UserReadComponent,
-    UserRead2Component,
     UserUpdateComponent
   ],
   imports: [

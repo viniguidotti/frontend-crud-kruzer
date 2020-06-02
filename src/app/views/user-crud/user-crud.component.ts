@@ -16,10 +16,6 @@ export class UserCrudComponent implements OnInit {
   navigateToUserCreate(): void {
     this.router.navigate(['/users/create'])
   }
-  
-  navigateToUpdateUser(): void {
-    this.router.navigate(['/users/update'])
-  }
 
   navigateToUserList(): void {
     this.router.navigate(['/users/read'])
