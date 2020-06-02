@@ -25,7 +25,7 @@ export class UserService {
 
   //Error messages
   errorCreate(e: any): Observable<any> {
-    this.showMessage('Erro ao cadastrar, tente novamente', true)
+    this.showMessage('Erro ao cadastrar, e-mail já existe', true)
     return EMPTY
   }
   errorDelete(e: any): Observable<any> {
