@@ -129,5 +129,8 @@
       }
     }
   },
-  "defaultProject": "hcode"
+  "defaultProject": "hcode",
+  "cli": {
+    "analytics": false
+  }
 }
