@@ -26,8 +26,8 @@ export class UserUpdateComponent implements OnInit {
     });
   }
 
-  updateUser(): void {
-    this.userService.update(this.user).subscribe(() => {
+  async updateUser() {
+    await this.userService.update(this.user).subscribe(() => {
       this.userService.showMessage('Usuário Atualizado')
       this.router.navigate(['/users/read']);
     });

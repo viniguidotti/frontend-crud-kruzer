@@ -26,8 +26,6 @@ export class Constants {
 })
 export class UserReadComponent implements OnInit {
 
-  baseUrl = "http://localhost:3000/users/"
-
   users: any;
   displayedColumns = ['_id', 'name', 'email', 'createdAt', 'buttons'];
 
@@ -43,12 +41,11 @@ export class UserReadComponent implements OnInit {
     }
   }
  
-  deleteUser(_id) {
-    this.userService.delete(_id).subscribe(() => {
+  async deleteUser(_id) {
+    await this.userService.delete(_id).subscribe(() => {
     this.userService.showMessage('Usuário deletado');
     this.router.navigate(['/users/read']);
   })
-
 }
 
   cancel(): void {

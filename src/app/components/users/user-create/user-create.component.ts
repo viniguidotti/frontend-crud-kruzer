@@ -22,15 +22,13 @@ export class UserCreateComponent implements OnInit {
     private router: Router) { }
 
   ngOnInit(): void {
-
   }
 
-  createUser(): void {
-    this.userService.create(this.user).subscribe(() => {
-      this.userService.showMessage('Usuário criado')
+  async createUser() {
+    await this.userService.create(this.user).subscribe(() => {
+      this.userService.showMessage('Usuário criado');
       this.router.navigate(['/users'])
     })
-
   }
 
   cancel(): void {
