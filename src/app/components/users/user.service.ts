@@ -56,6 +56,7 @@ export class UserService {
       catchError(e => this.errorDelete(e))
     )
   };
+  
 
   readById(_id: string): Observable<User> {
     const url = `${this.baseUrl}/${_id}`

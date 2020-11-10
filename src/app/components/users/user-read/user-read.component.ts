@@ -28,15 +28,19 @@ export class UserReadComponent implements OnInit {
 
   baseUrl = "http://localhost:3000/users/"
 
-  users: any
-  displayedColumns = ['_id', 'name', 'email', 'createdAt', 'buttons']
+  users: any;
+  displayedColumns = ['_id', 'name', 'email', 'createdAt', 'buttons'];
 
   constructor(private userService: UserService, private http: HttpClient,
   private router: Router,
   private route: ActivatedRoute) {}
 
   async ngOnInit() {
+    try {
       this.users = await this.userService.read();
+    } catch (error) {
+      console.log('error :>> ', error);
+    }
   }
  
   deleteUser(_id) {
