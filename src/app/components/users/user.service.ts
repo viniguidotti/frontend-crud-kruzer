@@ -12,7 +12,9 @@ export class UserService {
 
   baseUrl = "http://3.139.78.183:3000/users/"
 
-  constructor(private snackBar: MatSnackBar, private http: HttpClient) { }
+  constructor(private snackBar: MatSnackBar, private http: HttpClient) { 
+    
+  }
 
   showMessage(msg: string, isError: boolean = false): void {
     this.snackBar.open(msg, 'X', {
