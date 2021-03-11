@@ -10,7 +10,7 @@ import { tap, delay, take, map, catchError } from 'rxjs/operators';
 })
 export class UserService {
 
-  baseUrl = "https://3.23.113.8:3000/users/"
+  baseUrl = "http://localhost:3000/users/"
 
   constructor(private snackBar: MatSnackBar, private http: HttpClient) { 
     
