@@ -1,7 +1,7 @@
-crud-kruzer
-Project CRUD-Kruzer - Fullstack Developer
+crud
+Project CRUD - Fullstack Developer
 
-Projeto sendo desenvolvido por Vinicius Guidotti no intuito de participar pelo processo de teste para vaga de Fullstack Developer pela empresa Kruzer.
+Projeto desenvolvido por Vinicius Guidotti.
 
 Desenvolvimento sem fins lucrativos
 
