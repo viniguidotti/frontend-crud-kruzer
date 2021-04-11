@@ -10,7 +10,7 @@ import { tap, delay, take, map, catchError } from 'rxjs/operators';
 })
 export class UserService {
 
-  baseUrl = "https://backend-crud-kruzer.herokuapp.com:3000/users/"
+  baseUrl = "https://backend-crud-kruzer.herokuapp.com/users/"
 
   constructor(private snackBar: MatSnackBar, private http: HttpClient) { 
     
